@@ -1,5 +1,5 @@
 # UglifyPHP
-v1.0.2
+v1.0.3
 
 A simple PHP wrapper for [Uglify JS](https://github.com/mishoo/UglifyJS2) and [Uglify CSS](https://github.com/fmarcia/UglifyCSS)
 
@@ -116,6 +116,10 @@ export PATH="$PATH:/usr/local/bin"
 ```
 
 ## Version History
+
+### 1.0.3
+
+- Fixed arguments space bug \[#1\] - reported by @lboynton
 
 ### 1.0.2
 - Fixed file path space bug
