@@ -81,14 +81,14 @@ abstract class Uglify
 
     private function options_string($opts)
     {
-        $options = '';
+        $options = array();
 
         foreach ($opts as $name => $value) {
             if (in_array($name, static::$options)) {
                 if ($value === true) {
-                    $options .= '--' . $name;
+                    $options[] = '--' . $name;
                 } else if (is_string($value)) {
-                    $options .= '--' . $name . ' ' . escapeshellarg($value);
+                    $options[] = '--' . $name . ' ' . escapeshellarg($value);
                 } else {
                     throw new \Exception('Value of "' . $name . '" in ' . get_called_class() . ' must be a string');
                 }
@@ -97,6 +97,6 @@ abstract class Uglify
             }
         }
 
-        return $options;
+        return implode(' ', $options);
     }
 }
