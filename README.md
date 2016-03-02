@@ -1,3 +1,5 @@
+**This repository is no longer supported. Please get in touch if you'd like to take it over.**
+
 # UglifyPHP
 v1.0.3
 
