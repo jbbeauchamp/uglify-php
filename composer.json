@@ -7,6 +7,11 @@
     "type": "library",
     "authors": [
         {
+            "name": "Small Hadron Collider",
+            "email": "mark@smallhadroncollider.com",
+            "homepage": "http://smallhadroncollider.com"
+        },
+        {
             "name": "Minh Tran",
             "email": "minh@starseed.fr",
             "homepage": "http://starseed.fr"
