@@ -7,7 +7,7 @@ use UglifyPHP\HTML;
 require_once __DIR__ . '/../vendor/autoload.php';
 
 if (JS::installed()) {
-    $uglify = new JS(array('js-files/jquery.js', 'js-files/bootstrap.js', 'js-files/script.js'));
+    $uglify = new JS(['js-files/jquery.js', 'js-files/bootstrap.js', 'js-files/script.js']);
 
     if ($uglify->minify('min.js')) {
         echo '<p>JS compressed</p>';
@@ -17,9 +17,9 @@ if (JS::installed()) {
 }
 
 if (CSS::installed()) {
-    $uglify = new CSS(array('css-files/bootstrap-responsive.css', 'css-files/bootstrap.css', 'css-files/css.css'));
+    $uglify = new CSS(['css-files/bootstrap-responsive.css', 'css-files/bootstrap.css', 'css-files/css.css']);
 
-    if ($uglify->minify('min.css', array('max-line-len' => '80'))) {
+    if ($uglify->minify('min.css', ['s0' => true])) {
         echo '<p>CSS compressed</p>';
     } else {
         echo '<p>CSS error</p>';
@@ -27,8 +27,8 @@ if (CSS::installed()) {
 }
 
 if (HTML::installed()) {
-    $uglify = new HTML(array('html-files/index.html'));
-    $compressedHtmlString = $uglify->minify(null, [
+    $uglify = new HTML(['html-files/index.html']);
+    $compressedHtmlString = $uglify->minify('min.html', [
         'collapse-boolean-attributes' => true,
         'collapse-inline-tag-whitespace' => true,
         'collapse-whitespace' => true,
@@ -48,7 +48,7 @@ if (HTML::installed()) {
         'trim-custom-fragments' => true,
     ]);
     if ($compressedHtmlString) {
-        echo $compressedHtmlString;
+        echo '<p>HTML compressed</p>';
     } else {
         echo '<p>HTML error</p>';
     }
